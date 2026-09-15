@@ -1,45 +1,43 @@
 class Solution {
 public:
-bool fun(vector<int> &have, vector<int> &need)
-{
-    for(int i=0;i<256;i++)
-    {
-        if(have[i]<need[i])
-        return false;
-    }
-    return true;
-}
-
     string minWindow(string s, string t) {
-        int n=s.size();
-        int m=t.size();
-        vector<int> have(256,0);
-        vector<int> need(256,0);
-        int i;
-        if(n<m)
-        return "";
+        if(t.size()>s.size()) return "";
 
-        for(i=0;i<m;i++){
-            need[t[i]]++;
+        unordered_map<char,int>need,window;
+
+        for(char c:t){
+            need[c]++;
         }
-        int low=0, high=0;
-        int res= INT_MAX;
-        int start= -1;
-        for(high=0;high<n;high++){
-            have[s[high]]++;
-            while(fun(have,need)){
-                int len=high-low+1;
-                if(res>len){
-                    res=len;
-                    start=low;
+        int left=0;
+        int minlen=INT_MAX;
+        int count=0;
+        int start=0;
+
+        for(int right=0;right<s.size();right++){
+            char c=s[right];
+            window[c]++;
+
+            if(need.count(c)&& window[c]<=need[c]){
+                count++;
+            }
+            while(count==t.size()){
+                if(right-left+1<minlen){
+                    minlen=right-left+1;
+                    start=left;
                 }
-                have[s[low]]--;
-                low++;
+                char x=s[left];
+                window[x]--;
+
+                if(need.count(x)&& window[x]<need[x]){
+                    count--;
+                }
+                left++;
+
             }
         }
-        if(res==INT_MAX)
-        return "";
-        return s.substr(start,res);
-        
+        if(minlen==INT_MAX){
+            return "";
+        }
+        return s.substr(start,minlen);
     }
 };
