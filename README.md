@@ -11,10 +11,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/himanisharmahs05-maker/Leetcode-Solutions/tree/master/0001-two-sum) |
+| [0013-roman-to-integer](https://github.com/himanisharmahs05-maker/Leetcode-Solutions/tree/master/0013-roman-to-integer) |
 ## String
 |  |
 | ------- |
 | [0010-regular-expression-matching](https://github.com/himanisharmahs05-maker/Leetcode-Solutions/tree/master/0010-regular-expression-matching) |
+| [0013-roman-to-integer](https://github.com/himanisharmahs05-maker/Leetcode-Solutions/tree/master/0013-roman-to-integer) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -23,4 +25,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0010-regular-expression-matching](https://github.com/himanisharmahs05-maker/Leetcode-Solutions/tree/master/0010-regular-expression-matching) |
+## Math
+|  |
+| ------- |
+| [0013-roman-to-integer](https://github.com/himanisharmahs05-maker/Leetcode-Solutions/tree/master/0013-roman-to-integer) |
 <!---LeetCode Topics End-->
