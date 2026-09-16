@@ -1,9 +1,9 @@
-name: Sync LeetCode Past & New Solutions
+name: Sync LeetCode Submissions
 
 on:
-  workflow_dispatch: # Allows you to manually trigger it anytime
+  workflow_dispatch: # Run manually anytime
   schedule:
-    - cron: '0 8 * * *' # Runs automatically every day
+    - cron: '0 0 * * *' # Automatically runs every night to fetch new submissions
 
 jobs:
   sync:
@@ -18,5 +18,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
-          destination-folder: solutions
+          destination-folder: solutions  # <--- ALL past and future solutions go here!
           verbose: true
